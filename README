@@ -1,0 +1,7 @@
+
+
+CONTRIBUTING
+
+Contributing to this project requires copyright assignment to William Witt and ManicWare software.  This is beacuse the application is distributed via the Apple App Store.  The App Store is generally incompatible with GPL liscenses because of the the inability of users to redistribute the applications they download.  This means that ManicWare is the only entity with the athority to release a version of the application in the App Store.  All proceedes will go toward development of the application.  Once the application becomes profitable, 25% of all profits will be utilized to contribute to other open source initiatives.
+
+If at some later date, the project becomes unmaintained (as evidenced by the release of a new version of iOS without a new relese of the applicaiton within 6 months), I will release the software under an MIT liscens to ensure that future contributers can relaease.
