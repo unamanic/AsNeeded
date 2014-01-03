@@ -10,33 +10,34 @@
 #import "User.h"
 #import "Medication.h"
 #import "AsNeededAppDelegate.h"
+#import "EditMedsViewController.h"
+#import "MyMedsTableViewCell.h"
+#import "MedicationAdministration.h"
+#import <iAd/iAd.h>
 
 
 @interface MyMedsViewController () {
     User *user;
     NSMutableArray *medArray;
+    AsNeededAppDelegate *appDelegate;
+    Medication *med;
 }
 
 @end
 
 @implementation MyMedsViewController
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    AsNeededAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate = [UIApplication sharedApplication].delegate;
     user = appDelegate.user;
-    
     medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
+    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                                      target:self selector:@selector(refreshTable)
+                                                    userInfo:nil repeats:YES];
+    [adView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
+    
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -47,10 +48,43 @@
     
 }
 
+- (void)viewDidAppear:(BOOL)animated
+{
+
+}
+
+- (void)viewWillAppear:(BOOL)animated
+{
+    user = [appDelegate fetchUser];
+    if (user) {
+        medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
+        [self.tableView reloadData];
+        [self.tableView setNeedsDisplay];
+    }
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (NSString *)stringFromTimeInterval:(NSTimeInterval)interval {
+    NSInteger ti = (NSInteger)interval;
+    NSInteger seconds = ti % 60;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600);
+    return [NSString stringWithFormat:@"%02i:%02i:%02i", hours, minutes, seconds];
+}
+
+- (void)refreshTable
+{
+    [self.tableView reloadData];
+}
+
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    adViewHeightConstraint.constant = adView.bounds.size.height;
 }
 
 #pragma mark - Table view data source
@@ -70,13 +104,46 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    MyMedsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"hh:mm:ss"];
+    
+    Medication *cellMed =[medArray objectAtIndex:indexPath.row];
     // Configure the cell...
+    cell.med = cellMed;
+    cell.medLabel.text = cellMed.name;
+    
+    NSTimeInterval remaining = 0;
+    
+    
+    for (MedicationAdministration *admin in cellMed.medicationAdministrations) {
+        NSDate *nextDose = [admin.time dateByAddingTimeInterval:[cellMed.minimumTimeBetweenDoses doubleValue]];
+        //deterine if the nextdose is later than NOW
+        if ([nextDose compare:[NSDate date]] == NSOrderedDescending) {
+            remaining = [nextDose timeIntervalSinceNow];
+            cell.takeMedButton.enabled = NO;
+            cell.intervalProgress.progress = 1+((float)([admin.time timeIntervalSinceNow])/((float)[cellMed.minimumTimeBetweenDoses doubleValue]));
+
+            break;
+        }
+    }
+    
+    if (remaining) {
+       cell.intervalLabel.text = [NSString stringWithFormat:@"Next Dose: %@", [self stringFromTimeInterval:remaining]];
+    } else {
+        cell.intervalLabel.text = [NSString stringWithFormat:@"Dose Every: %@", [self stringFromTimeInterval:[cellMed.minimumTimeBetweenDoses doubleValue]]];
+        cell.takeMedButton.enabled = YES;
+        cell.intervalProgress.progress = 0;
+    }
     
     return cell;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   
+}
 
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
@@ -124,12 +191,20 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if (sender == addButton) {
+        med = nil;
+    } else {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        med = [medArray objectAtIndex:indexPath.row];
+    }
+    EditMedsViewController *desinationVC = [segue destinationViewController];
+    desinationVC.med = med;
+    
 }
 
 
 
 - (IBAction)addMed:(id)sender {
-    AsNeededAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
-    appDelegate.med = [Medication alloc];
+    
 }
 @end

@@ -2,8 +2,8 @@
 //  Medication.h
 //  AsNeeded
 //
-//  Created by William Witt on 12/30/13.
-//  Copyright (c) 2013 William Witt. All rights reserved.
+//  Created by William Witt on 1/2/14.
+//  Copyright (c) 2014 William Witt. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -19,8 +19,8 @@
 @property (nonatomic, retain) NSString * dosageType;
 @property (nonatomic, retain) NSString * dosageUnit;
 @property (nonatomic, retain) NSDate * intraadministrationCooldown;
+@property (nonatomic, retain) NSNumber * minimumTimeBetweenDoses;
 @property (nonatomic, retain) NSString * name;
-@property (nonatomic, retain) NSDate * minimumTimeBetweenDoses;
 @property (nonatomic, retain) NSSet *medicationAdministrations;
 @property (nonatomic, retain) NSSet *periodicAdministrationSchedule;
 @property (nonatomic, retain) User *user;

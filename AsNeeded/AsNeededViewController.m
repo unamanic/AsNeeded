@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 William Witt. All rights reserved.
 //
 
+#import <iAd/iAd.h>
 #import "AsNeededViewController.h"
 #import "User.h"
 #import "AsNeededAppDelegate.h"
@@ -55,4 +56,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
+{
+    adViewHeightConstraint.constant = adView.bounds.size.height;
+}
 @end

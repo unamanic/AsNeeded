@@ -7,8 +7,12 @@
 //
 
 #import "EditMedsViewController.h"
+#import "Medication.h"
+#import "AsNeededAppDelegate.h"
 
-@interface EditMedsViewController ()
+@interface EditMedsViewController () {
+    AsNeededAppDelegate *appDelegate;
+}
 
 @end
 
@@ -24,9 +28,13 @@
 
 - (void)viewDidLoad
 {
-    [super viewDidLoad];
+    //Temporarily always creating new med
+    appDelegate = [UIApplication sharedApplication].delegate;
+    //self.med = [appDelegate createMedication];
+    //med = appDelegate.med;
+    
     dosageUnitArray = [NSArray arrayWithObjects:@"mg",
-                       @"pill",
+                       @"Pill",
                        @"Tablespoon",
                        @"Teaspoon",
                        @"ml",
@@ -34,6 +42,27 @@
                        @"Injection",
                        @"Other",
                        nil];
+    
+    int dosageUnitIndex = 0;
+    
+    NSLog(@"%@", self.med.dosageType);
+    
+    for (NSString *string in dosageUnitArray) {
+        if ([string isEqualToString:self.med.dosageUnit]) {
+            dosageUnitIndex = [dosageUnitArray indexOfObject:string];
+        }
+    }
+    if (self.med) {
+        nameTextField.text = self.med.name;
+        dosageSizeTextField.text = [self.med.dosageSize stringValue];
+        [dosageUnitTypePicker selectRow:dosageUnitIndex inComponent:0 animated:YES];
+        if (self.med.minimumTimeBetweenDoses ) {
+            minimumTimePicker.countDownDuration = [self.med.minimumTimeBetweenDoses doubleValue];
+        }
+    }
+    [self textFieldEdited:nil];
+    
+    [super viewDidLoad];
     [self registerForKeyboardNotifications];
 }
 
@@ -44,6 +73,17 @@
 }
 
 - (IBAction)Save:(id)sender {
+    
+    if (!self.med) {
+        self.med = [appDelegate createMedication];
+    }
+    self.med.name = nameTextField.text;
+    self.med.dosageSize = [NSNumber numberWithFloat:dosageSizeTextField.text.floatValue];
+    self.med.dosageUnit = dosageUnit;
+    self.med.minimumTimeBetweenDoses = [NSNumber numberWithDouble:minimumTimePicker.countDownDuration];
+    appDelegate.med = self.med;
+    [appDelegate persistMedication:self.med];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)textFieldEdited:(id)sender {
@@ -74,7 +114,7 @@
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
 {
-    
+    dosageUnit = [dosageUnitArray objectAtIndex:row];
 }
 
 #pragma mark - UITextFieldDelegate Methods

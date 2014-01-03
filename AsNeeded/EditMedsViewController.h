@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
+@class Medication;
+
 @interface EditMedsViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate> {
     NSString *name;
     float dosageSize;
@@ -15,7 +17,7 @@
     NSDate *minimumTimeBetweenDoses;
     NSArray *dosageUnitArray;
     UITextField *activeField;
-    
+
         
     __weak IBOutlet UIScrollView *scrollView;
     __weak IBOutlet UITextField *nameTextField;
@@ -24,6 +26,7 @@
     __weak IBOutlet UIDatePicker *minimumTimePicker;
     __weak IBOutlet UIBarButtonItem *saveButton;
 }
+@property (strong) Medication *med;
 
 - (IBAction)Save:(id)sender;
 - (IBAction)textFieldEdited:(id)sender;

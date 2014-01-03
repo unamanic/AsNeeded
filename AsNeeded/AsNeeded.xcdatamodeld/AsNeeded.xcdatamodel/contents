@@ -7,7 +7,7 @@
         <attribute name="dosageType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dosageUnit" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="intraadministrationCooldown" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="minimumTimeBetweenDoses" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="minimumTimeBetweenDoses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="medicationAdministrations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MedicationAdministration" inverseName="medication" inverseEntity="MedicationAdministration" syncable="YES"/>
         <relationship name="periodicAdministrationSchedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeriodicAdministrationSchedule" inverseName="medication" inverseEntity="PeriodicAdministrationSchedule" syncable="YES"/>

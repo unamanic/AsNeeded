@@ -2,8 +2,8 @@
 //  Medication.m
 //  AsNeeded
 //
-//  Created by William Witt on 12/30/13.
-//  Copyright (c) 2013 William Witt. All rights reserved.
+//  Created by William Witt on 1/2/14.
+//  Copyright (c) 2014 William Witt. All rights reserved.
 //
 
 #import "Medication.h"
@@ -20,8 +20,8 @@
 @dynamic dosageType;
 @dynamic dosageUnit;
 @dynamic intraadministrationCooldown;
-@dynamic name;
 @dynamic minimumTimeBetweenDoses;
+@dynamic name;
 @dynamic medicationAdministrations;
 @dynamic periodicAdministrationSchedule;
 @dynamic user;

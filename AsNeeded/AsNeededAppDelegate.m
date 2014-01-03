@@ -7,6 +7,8 @@
 //
 
 #import "AsNeededAppDelegate.h"
+#import "User.h"
+#import "Medication.h"
 
 @implementation AsNeededAppDelegate
 
@@ -183,5 +185,39 @@
     return user;
 }
 
+- (Medication *)createMedication
+{
+    Medication *medication = [NSEntityDescription insertNewObjectForEntityForName:@"Medication" inManagedObjectContext:self.managedObjectContext];
+    medication.user = self.user;
+    return medication;
+}
+
+- (void)persistMedication:(Medication *)medicationIn;
+{
+    self.med = medicationIn;
+    
+    NSError *error;
+    
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Couldn't persist the medication");
+    }
+}
+
+- (MedicationAdministration *)createMedicationAdministration
+{
+    MedicationAdministration *medicationAdmin = [NSEntityDescription insertNewObjectForEntityForName:@"MedicationAdministration" inManagedObjectContext:self.managedObjectContext];
+    return medicationAdmin;
+}
+
+- (void)persistMedicationAdministration:(MedicationAdministration *)medAdminIn
+{
+    NSError *error;
+    
+    self.medAdmin = medAdminIn;
+    
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Couldn't persist");
+    }
+}
 
 @end

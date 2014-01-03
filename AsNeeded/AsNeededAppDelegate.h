@@ -10,12 +10,15 @@
 
 @class User;
 @class Medication;
+@class MedicationAdministration;
 
 @interface AsNeededAppDelegate : UIResponder <UIApplicationDelegate> {
 
 }
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) Medication *med;
+@property (strong, nonatomic) MedicationAdministration *medAdmin;
+
 
 @property (strong, nonatomic) UIWindow *window;
 
@@ -30,4 +33,9 @@
 - (void)persistUser:(User *)userIn;
 - (User *)fetchOrCreateUser;
 
+- (Medication *)createMedication;
+- (void)persistMedication:(Medication *)medicationIn;
+
+- (MedicationAdministration *)createMedicationAdministration;
+- (void)persistMedicationAdministration:(MedicationAdministration *)medAdminIn;
 @end
