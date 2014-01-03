@@ -13,14 +13,17 @@
 
 @class User;
 
-@interface AsNeededViewController : UIViewController {
+@interface AsNeededViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
     User * user;
     __weak IBOutlet UIButton *myMedsButton;
     __weak IBOutlet UIButton *reportsButton;
     __weak IBOutlet UIButton *myInfoButton;
     __weak IBOutlet ADBannerView *adView;
     __weak IBOutlet NSLayoutConstraint *adViewHeightConstraint;
+    
+    
 }
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end

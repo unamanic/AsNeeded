@@ -11,7 +11,10 @@
 @class Medication;
 @class MedicationAdministration;
 
-@interface MyMedsTableViewCell : UITableViewCell <UIAlertViewDelegate>
+@interface MyMedsTableViewCell : UITableViewCell <UIAlertViewDelegate> {
+    
+}
+
 @property (weak, nonatomic) IBOutlet UILabel *medLabel;
 @property (weak, nonatomic) IBOutlet UILabel *intervalLabel;
 @property (weak, nonatomic) IBOutlet UIProgressView *intervalProgress;

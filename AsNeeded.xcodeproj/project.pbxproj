@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB1277901876C7A60077E66A /* MyMedsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB12778F1876C7A60077E66A /* MyMedsCollectionViewCell.m */; };
 		BB3626F71872819600698D70 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3626F61872819600698D70 /* iAd.framework */; };
 		BB3626FA18728AD400698D70 /* PeriodicAdministrationOccurance.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3626F918728AD400698D70 /* PeriodicAdministrationOccurance.m */; };
 		BB3626FD18728AD500698D70 /* MedicationAdministration.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3626FC18728AD500698D70 /* MedicationAdministration.m */; };
@@ -39,6 +40,11 @@
 		BB8C44201870BAAE007FC069 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8C441F1870BAAE007FC069 /* StoreKit.framework */; };
 		BB8C44221870BAFE007FC069 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8C44211870BAFE007FC069 /* iPhoneStoryboard.storyboard */; };
 		BBADA03E187685F90017D83C /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBADA03D187685F90017D83C /* iPadStoryboard.storyboard */; };
+		BBADA0421876B5790017D83C /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA03F1876B5790017D83C /* Add.png */; };
+		BBADA0431876B5790017D83C /* pillx2.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA0401876B5790017D83C /* pillx2.png */; };
+		BBADA0441876B5790017D83C /* pill.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA0411876B5790017D83C /* pill.png */; };
+		BBADA0461876B5A70017D83C /* Addx2.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA0451876B5A70017D83C /* Addx2.png */; };
+		BBADA0491876B7530017D83C /* AddMedicationViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BBADA0481876B7530017D83C /* AddMedicationViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB12778E1876C7A60077E66A /* MyMedsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMedsCollectionViewCell.h; sourceTree = "<group>"; };
+		BB12778F1876C7A60077E66A /* MyMedsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMedsCollectionViewCell.m; sourceTree = "<group>"; };
 		BB3626F61872819600698D70 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BB3626F818728AD400698D70 /* PeriodicAdministrationOccurance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodicAdministrationOccurance.h; sourceTree = "<group>"; };
 		BB3626F918728AD400698D70 /* PeriodicAdministrationOccurance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodicAdministrationOccurance.m; sourceTree = "<group>"; };
@@ -98,6 +106,12 @@
 		BB8C441F1870BAAE007FC069 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BB8C44211870BAFE007FC069 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
 		BBADA03D187685F90017D83C /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
+		BBADA03F1876B5790017D83C /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = ../../../Add.png; sourceTree = "<group>"; };
+		BBADA0401876B5790017D83C /* pillx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pillx2.png; path = ../../../pillx2.png; sourceTree = "<group>"; };
+		BBADA0411876B5790017D83C /* pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pill.png; path = ../../../pill.png; sourceTree = "<group>"; };
+		BBADA0451876B5A70017D83C /* Addx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Addx2.png; path = ../../../Addx2.png; sourceTree = "<group>"; };
+		BBADA0471876B7530017D83C /* AddMedicationViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddMedicationViewCell.h; sourceTree = "<group>"; };
+		BBADA0481876B7530017D83C /* AddMedicationViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddMedicationViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +217,10 @@
 				BB637BF018762A20008C3BC6 /* MyMedsTableViewCell.h */,
 				BB637BF118762A20008C3BC6 /* MyMedsTableViewCell.m */,
 				BBADA03D187685F90017D83C /* iPadStoryboard.storyboard */,
+				BBADA0471876B7530017D83C /* AddMedicationViewCell.h */,
+				BBADA0481876B7530017D83C /* AddMedicationViewCell.m */,
+				BB12778E1876C7A60077E66A /* MyMedsCollectionViewCell.h */,
+				BB12778F1876C7A60077E66A /* MyMedsCollectionViewCell.m */,
 			);
 			path = AsNeeded;
 			sourceTree = "<group>";
@@ -210,6 +228,10 @@
 		BB8C43F21870BA93007FC069 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BBADA0451876B5A70017D83C /* Addx2.png */,
+				BBADA03F1876B5790017D83C /* Add.png */,
+				BBADA0401876B5790017D83C /* pillx2.png */,
+				BBADA0411876B5790017D83C /* pill.png */,
 				BB8C43F31870BA93007FC069 /* AsNeeded-Info.plist */,
 				BB8C43F41870BA93007FC069 /* InfoPlist.strings */,
 				BB8C43F71870BA93007FC069 /* main.m */,
@@ -326,10 +348,14 @@
 				BB637BEF1875F5A0008C3BC6 /* README in Resources */,
 				BB637BED1875F424008C3BC6 /* COPYING in Resources */,
 				BB637BF418764175008C3BC6 /* pill.png in Resources */,
+				BBADA0421876B5790017D83C /* Add.png in Resources */,
 				BB8C43F61870BA93007FC069 /* InfoPlist.strings in Resources */,
 				BB8C44011870BA93007FC069 /* Images.xcassets in Resources */,
+				BBADA0441876B5790017D83C /* pill.png in Resources */,
 				BBADA03E187685F90017D83C /* iPadStoryboard.storyboard in Resources */,
+				BBADA0431876B5790017D83C /* pillx2.png in Resources */,
 				BB8C44221870BAFE007FC069 /* iPhoneStoryboard.storyboard in Resources */,
+				BBADA0461876B5A70017D83C /* Addx2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +380,7 @@
 				BB637BF7187655F3008C3BC6 /* Medication.m in Sources */,
 				BB82A17F18712E960086AB03 /* MyInfoViewController.m in Sources */,
 				BB8C43FF1870BA93007FC069 /* AsNeeded.xcdatamodeld in Sources */,
+				BB1277901876C7A60077E66A /* MyMedsCollectionViewCell.m in Sources */,
 				BB3626FA18728AD400698D70 /* PeriodicAdministrationOccurance.m in Sources */,
 				BB637BF218762A20008C3BC6 /* MyMedsTableViewCell.m in Sources */,
 				BB36270C18728ED400698D70 /* MyMedsViewController.m in Sources */,
@@ -361,6 +388,7 @@
 				BB8C43F81870BA93007FC069 /* main.m in Sources */,
 				BB3626FD18728AD500698D70 /* MedicationAdministration.m in Sources */,
 				BB82A17B187122660086AB03 /* AsNeededViewController.m in Sources */,
+				BBADA0491876B7530017D83C /* AddMedicationViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

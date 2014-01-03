@@ -9,9 +9,17 @@
 #import <iAd/iAd.h>
 #import "AsNeededViewController.h"
 #import "User.h"
+#import "Medication.h"
+#import "MedicationAdministration.h"
 #import "AsNeededAppDelegate.h"
+#import "MyMedsCollectionViewCell.h"
 
-@interface AsNeededViewController ()
+
+@interface AsNeededViewController () {
+    NSMutableArray *medArray;
+    
+    NSTimer *timer;
+}
 
 @property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
 
@@ -44,9 +52,19 @@
 {
     AsNeededAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
     user = [appDelegate fetchUser];
+    
+    //[self.collectionView registerClass:[MyMedsCollectionViewCell class] forCellWithReuseIdentifier:@"MedCell"];
+
+    
+    timer = [NSTimer scheduledTimerWithTimeInterval:30
+                                             target:self selector:@selector(refreshCollection)
+                                           userInfo:nil repeats:YES];
+    
     if (user) {
         myMedsButton.enabled = YES;
+        medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
     }
+    [self refreshCollection];
 }
 
 
@@ -59,5 +77,69 @@
 - (void)didRotateFromInterfaceOrientation:(UIInterfaceOrientation)fromInterfaceOrientation
 {
     adViewHeightConstraint.constant = adView.bounds.size.height;
+}
+
+- (NSString *)stringFromTimeInterval:(NSTimeInterval)interval {
+    NSInteger ti = (NSInteger)interval;
+    NSInteger minutes = (ti / 60) % 60;
+    NSInteger hours = (ti / 3600);
+    return [NSString stringWithFormat:@"%02i:%02i", hours, minutes];
+}
+
+- (void)refreshCollection
+{
+    [self.collectionView reloadData];
+}
+
+#pragma mark - UICollectionView Methodods
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
+{
+    if (medArray) {
+        return medArray.count;
+    }
+    return 0;
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    MyMedsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MedCell" forIndexPath:indexPath];
+    
+    Medication *med = [medArray objectAtIndex:indexPath.row];
+    
+    cell.med = med;
+    cell.medLabel.text = med.name;
+    
+    NSTimeInterval remaining = 0;
+    NSDate *adminTime;
+    
+    
+    for (MedicationAdministration *admin in med.medicationAdministrations) {
+        NSDate *nextDose = [admin.time dateByAddingTimeInterval:[med.minimumTimeBetweenDoses doubleValue]];
+        //deterine if the nextdose is later than NOW
+        if ([nextDose compare:[NSDate date]] == NSOrderedDescending) {
+            remaining = [nextDose timeIntervalSinceNow];
+            adminTime = admin.time;
+            cell.button.enabled = NO;
+            break;
+        }
+    }
+    
+    if (remaining) {
+        cell.intervalLabel.text = [NSString stringWithFormat:@"%@", [self stringFromTimeInterval:remaining]];
+        [cell.intervalProgress setProgress:1+((float)([adminTime timeIntervalSinceNow])/((float)[med.minimumTimeBetweenDoses doubleValue])) animated:NO];
+        [cell.intervalProgress setHidden:NO];
+
+    } else {
+        cell.intervalLabel.text = @"Ready!";
+        cell.button.enabled = YES;
+        cell.intervalProgress.progress = 0;
+        [cell.intervalProgress setHidden:YES];
+    }
+    
+    return cell;
+}
+
+- (IBAction)takeMed:(id)sender {
 }
 @end

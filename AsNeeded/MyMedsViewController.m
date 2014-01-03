@@ -21,6 +21,8 @@
     NSMutableArray *medArray;
     AsNeededAppDelegate *appDelegate;
     Medication *med;
+    
+    NSTimer* timer;
 }
 
 @end
@@ -33,7 +35,7 @@
     appDelegate = [UIApplication sharedApplication].delegate;
     user = appDelegate.user;
     medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
-    NSTimer* timer = [NSTimer scheduledTimerWithTimeInterval:1
+    timer = [NSTimer scheduledTimerWithTimeInterval:1
                                                       target:self selector:@selector(refreshTable)
                                                     userInfo:nil repeats:YES];
     [adView setAutoresizingMask:UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleTopMargin];
@@ -98,43 +100,50 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return medArray.count;
+    return medArray.count + 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    MyMedsTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    [formatter setDateFormat:@"hh:mm:ss"];
-    
-    Medication *cellMed =[medArray objectAtIndex:indexPath.row];
-    // Configure the cell...
-    cell.med = cellMed;
-    cell.medLabel.text = cellMed.name;
-    
-    NSTimeInterval remaining = 0;
-    
-    
-    for (MedicationAdministration *admin in cellMed.medicationAdministrations) {
-        NSDate *nextDose = [admin.time dateByAddingTimeInterval:[cellMed.minimumTimeBetweenDoses doubleValue]];
-        //deterine if the nextdose is later than NOW
-        if ([nextDose compare:[NSDate date]] == NSOrderedDescending) {
-            remaining = [nextDose timeIntervalSinceNow];
-            cell.takeMedButton.enabled = NO;
-            cell.intervalProgress.progress = 1+((float)([admin.time timeIntervalSinceNow])/((float)[cellMed.minimumTimeBetweenDoses doubleValue]));
-
-            break;
+    MyMedsTableViewCell *cell;
+    if (indexPath.row < medArray.count) {
+        
+        static NSString *CellIdentifier = @"Cell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+        
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:@"hh:mm:ss"];
+        
+        Medication *cellMed =[medArray objectAtIndex:indexPath.row];
+        // Configure the cell...
+        cell.med = cellMed;
+        cell.medLabel.text = cellMed.name;
+        
+        NSTimeInterval remaining = 0;
+        
+        
+        for (MedicationAdministration *admin in cellMed.medicationAdministrations) {
+            NSDate *nextDose = [admin.time dateByAddingTimeInterval:[cellMed.minimumTimeBetweenDoses doubleValue]];
+            //deterine if the nextdose is later than NOW
+            if ([nextDose compare:[NSDate date]] == NSOrderedDescending) {
+                remaining = [nextDose timeIntervalSinceNow];
+                cell.takeMedButton.enabled = NO;
+                cell.intervalProgress.progress = 1+((float)([admin.time timeIntervalSinceNow])/((float)[cellMed.minimumTimeBetweenDoses doubleValue]));
+                
+                break;
+            }
         }
-    }
-    
-    if (remaining) {
-       cell.intervalLabel.text = [NSString stringWithFormat:@"Next Dose: %@", [self stringFromTimeInterval:remaining]];
+        
+        if (remaining) {
+            cell.intervalLabel.text = [NSString stringWithFormat:@"Next Dose: %@", [self stringFromTimeInterval:remaining]];
+        } else {
+            cell.intervalLabel.text = [NSString stringWithFormat:@"Dose Every: %@", [self stringFromTimeInterval:[cellMed.minimumTimeBetweenDoses doubleValue]]];
+            cell.takeMedButton.enabled = YES;
+            cell.intervalProgress.progress = 0;
+        }
     } else {
-        cell.intervalLabel.text = [NSString stringWithFormat:@"Dose Every: %@", [self stringFromTimeInterval:[cellMed.minimumTimeBetweenDoses doubleValue]]];
-        cell.takeMedButton.enabled = YES;
-        cell.intervalProgress.progress = 0;
+        static NSString *CellIdentifier = @"AddCell";
+        cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     }
     
     return cell;
@@ -149,23 +158,44 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Return NO if you do not want the specified item to be editable.
-    return YES;
+    if (indexPath.row < medArray.count) {
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
+- (void)tableView:(UITableView *)tableView willBeginEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [timer invalidate];
+}
 
-/*
 // Override to support editing the table view.
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        if (indexPath.row < medArray.count) {
+            [appDelegate deleteMedication:[medArray objectAtIndex:indexPath.row]];
+            [medArray removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+
     }   
     else if (editingStyle == UITableViewCellEditingStyleInsert) {
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+    }
+    
+
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(NSIndexPath *)indexPath
+{
+        timer = [NSTimer scheduledTimerWithTimeInterval:1
+                                             target:self selector:@selector(refreshTable)
+                                           userInfo:nil repeats:YES];
+}
+
 
 /*
 // Override to support rearranging the table view.
@@ -191,7 +221,7 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if (sender == addButton) {
+    if (((UIView *)sender).tag == 99) {
         med = nil;
     } else {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

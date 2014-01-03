@@ -35,6 +35,7 @@
 
 - (Medication *)createMedication;
 - (void)persistMedication:(Medication *)medicationIn;
+- (void)deleteMedication:(Medication *)medicationIn;
 
 - (MedicationAdministration *)createMedicationAdministration;
 - (void)persistMedicationAdministration:(MedicationAdministration *)medAdminIn;

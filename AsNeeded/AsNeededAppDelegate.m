@@ -203,6 +203,15 @@
     }
 }
 
+- (void)deleteMedication:(Medication *)medicationIn
+{
+    [self.managedObjectContext deleteObject:medicationIn];
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"Couldn't persist");
+    }
+}
+
 - (MedicationAdministration *)createMedicationAdministration
 {
     MedicationAdministration *medicationAdmin = [NSEntityDescription insertNewObjectForEntityForName:@"MedicationAdministration" inManagedObjectContext:self.managedObjectContext];
