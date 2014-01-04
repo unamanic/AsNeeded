@@ -65,6 +65,11 @@
     }
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [timer invalidate];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

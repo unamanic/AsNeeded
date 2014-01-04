@@ -56,7 +56,7 @@
     //[self.collectionView registerClass:[MyMedsCollectionViewCell class] forCellWithReuseIdentifier:@"MedCell"];
 
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:30
+    timer = [NSTimer scheduledTimerWithTimeInterval:5
                                              target:self selector:@selector(refreshCollection)
                                            userInfo:nil repeats:YES];
     
@@ -67,6 +67,10 @@
     [self refreshCollection];
 }
 
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [timer invalidate];
+}
 
 - (void)didReceiveMemoryWarning
 {
@@ -133,7 +137,7 @@
     } else {
         cell.intervalLabel.text = @"Ready!";
         cell.button.enabled = YES;
-        cell.intervalProgress.progress = 0;
+        //[cell.intervalProgress setProgress:0 animated:NO];
         [cell.intervalProgress setHidden:YES];
     }
     
