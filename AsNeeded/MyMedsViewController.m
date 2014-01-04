@@ -242,4 +242,10 @@
 - (IBAction)addMed:(id)sender {
     
 }
+
+#pragma mark - Clean Up
+
+- (void)viewDidUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
 @end

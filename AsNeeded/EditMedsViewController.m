@@ -64,6 +64,10 @@
     
     [super viewDidLoad];
     [self registerForKeyboardNotifications];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(reloadData)
+                                                 name:@"SomethingChanged"
+                                               object:[[UIApplication sharedApplication] delegate]];
 }
 
 - (void)didReceiveMemoryWarning

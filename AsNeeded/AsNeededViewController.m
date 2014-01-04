@@ -46,6 +46,11 @@
 //    if (user) {
 //        myMedsButton.enabled = YES;
 //    }
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refreshCollection)
+                                                 name:@"SomethingChanged"
+                                               object:[[UIApplication sharedApplication] delegate]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -92,6 +97,11 @@
 
 - (void)refreshCollection
 {
+    if (user) {
+        myMedsButton.enabled = YES;
+        medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
+    }
+    
     [self.collectionView reloadData];
 }
 
@@ -145,5 +155,11 @@
 }
 
 - (IBAction)takeMed:(id)sender {
+}
+
+#pragma mark - Clean Up
+
+- (void)viewDidUnload {
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 @end
