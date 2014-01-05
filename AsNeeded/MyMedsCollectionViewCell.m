@@ -52,6 +52,10 @@
         admin.medication = self.med;
         admin.time = [NSDate date];
         admin.quantity = [NSNumber numberWithInt:1];
+        if (appDelegate.location) {
+            admin.lat = [NSNumber numberWithDouble:appDelegate.location.coordinate.latitude];
+            admin.lon = [NSNumber numberWithDouble:appDelegate.location.coordinate.longitude];
+        }
         [appDelegate persistMedicationAdministration:admin];
         self.button.enabled = NO;
         self.intervalLabel.text = @"Calulating";

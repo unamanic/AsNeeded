@@ -2,8 +2,8 @@
 //  MedicationAdministration.m
 //  AsNeeded
 //
-//  Created by William Witt on 12/30/13.
-//  Copyright (c) 2013 William Witt. All rights reserved.
+//  Created by William Witt on 1/5/14.
+//  Copyright (c) 2014 William Witt. All rights reserved.
 //
 
 #import "MedicationAdministration.h"
@@ -14,6 +14,8 @@
 
 @dynamic quantity;
 @dynamic time;
+@dynamic lat;
+@dynamic lon;
 @dynamic medication;
 
 @end

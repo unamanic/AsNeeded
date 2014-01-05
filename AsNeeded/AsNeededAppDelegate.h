@@ -7,17 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CoreLocation.h>
 
 @class User;
 @class Medication;
 @class MedicationAdministration;
 
-@interface AsNeededAppDelegate : UIResponder <UIApplicationDelegate> {
+@interface AsNeededAppDelegate : UIResponder <UIApplicationDelegate, CLLocationManagerDelegate> {
 
 }
 @property (strong, nonatomic) User *user;
 @property (strong, nonatomic) Medication *med;
 @property (strong, nonatomic) MedicationAdministration *medAdmin;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) CLLocation *location;
+
 
 
 @property (strong, nonatomic) UIWindow *window;

@@ -2,7 +2,7 @@
 //  Medication.m
 //  AsNeeded
 //
-//  Created by William Witt on 1/2/14.
+//  Created by William Witt on 1/5/14.
 //  Copyright (c) 2014 William Witt. All rights reserved.
 //
 

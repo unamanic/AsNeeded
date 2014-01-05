@@ -3,55 +3,55 @@
     {
       "size" : "29x29",
       "idiom" : "iphone",
-      "filename" : "Star_of_life_60pt-1.png",
+      "filename" : "AsNeededIcon@58-1.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "iphone",
-      "filename" : "Star_of_life_80pt.png",
+      "filename" : "AsNeededIcon@80.png",
       "scale" : "2x"
     },
     {
       "size" : "60x60",
       "idiom" : "iphone",
-      "filename" : "Star_of_life_120pt.png",
+      "filename" : "AsNeededIcon@120.png",
       "scale" : "2x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Star_of_life_29pt.png",
+      "filename" : "AsNeededIcon@29.png",
       "scale" : "1x"
     },
     {
       "size" : "29x29",
       "idiom" : "ipad",
-      "filename" : "Star_of_life_60pt.png",
+      "filename" : "AsNeededIcon@58.png",
       "scale" : "2x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Star_of_life_40pt.png",
+      "filename" : "AsNeededIcon@40.png",
       "scale" : "1x"
     },
     {
       "size" : "40x40",
       "idiom" : "ipad",
-      "filename" : "Star_of_life_80pt-1.png",
+      "filename" : "AsNeededIcon@80-1.png",
       "scale" : "2x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Star_of_life_76pt.png",
+      "filename" : "AsNeededIcon@76.png",
       "scale" : "1x"
     },
     {
       "size" : "76x76",
       "idiom" : "ipad",
-      "filename" : "Star_of_life_152pt.png",
+      "filename" : "AsNeededIcon@152.png",
       "scale" : "2x"
     }
   ],

@@ -8,18 +8,22 @@
 
 /* Begin PBXBuildFile section */
 		BB1277901876C7A60077E66A /* MyMedsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB12778F1876C7A60077E66A /* MyMedsCollectionViewCell.m */; };
+		BB12779218787EED0077E66A /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB12779118787EED0077E66A /* iPadStoryboard.storyboard */; };
+		BB1277DF1878AC970077E66A /* BasicReportsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277DE1878AC970077E66A /* BasicReportsViewController.m */; };
+		BB1277E21879D3F30077E66A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1277E11879D3F30077E66A /* MapKit.framework */; };
+		BB1277E41879DB4B0077E66A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1277E31879DB4B0077E66A /* CoreLocation.framework */; };
+		BB1277E71879EF990077E66A /* PeriodicAdministrationSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277E61879EF990077E66A /* PeriodicAdministrationSchedule.m */; };
+		BB1277EA1879EF9A0077E66A /* PeriodicAdministrationOccurance.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277E91879EF9A0077E66A /* PeriodicAdministrationOccurance.m */; };
+		BB1277ED1879EF9A0077E66A /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277EC1879EF9A0077E66A /* Medication.m */; };
+		BB1277F01879EF9A0077E66A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277EF1879EF9A0077E66A /* User.m */; };
+		BB1277F31879EF9A0077E66A /* MedicationAdministration.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277F21879EF9A0077E66A /* MedicationAdministration.m */; };
 		BB3626F71872819600698D70 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3626F61872819600698D70 /* iAd.framework */; };
-		BB3626FA18728AD400698D70 /* PeriodicAdministrationOccurance.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3626F918728AD400698D70 /* PeriodicAdministrationOccurance.m */; };
-		BB3626FD18728AD500698D70 /* MedicationAdministration.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3626FC18728AD500698D70 /* MedicationAdministration.m */; };
-		BB36270018728AD500698D70 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BB3626FF18728AD500698D70 /* User.m */; };
-		BB36270618728AD500698D70 /* PeriodicAdministrationSchedule.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36270518728AD500698D70 /* PeriodicAdministrationSchedule.m */; };
 		BB36270918728E9500698D70 /* EditMedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36270818728E9500698D70 /* EditMedsViewController.m */; };
 		BB36270C18728ED400698D70 /* MyMedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36270B18728ED400698D70 /* MyMedsViewController.m */; };
 		BB637BED1875F424008C3BC6 /* COPYING in Resources */ = {isa = PBXBuildFile; fileRef = BB637BEC1875F424008C3BC6 /* COPYING */; };
 		BB637BEF1875F5A0008C3BC6 /* README in Resources */ = {isa = PBXBuildFile; fileRef = BB637BEE1875F5A0008C3BC6 /* README */; };
 		BB637BF218762A20008C3BC6 /* MyMedsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB637BF118762A20008C3BC6 /* MyMedsTableViewCell.m */; };
 		BB637BF418764175008C3BC6 /* pill.png in Resources */ = {isa = PBXBuildFile; fileRef = BB637BF318764175008C3BC6 /* pill.png */; };
-		BB637BF7187655F3008C3BC6 /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = BB637BF6187655F3008C3BC6 /* Medication.m */; };
 		BB82A17B187122660086AB03 /* AsNeededViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82A17A187122660086AB03 /* AsNeededViewController.m */; };
 		BB82A17F18712E960086AB03 /* MyInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82A17E18712E960086AB03 /* MyInfoViewController.m */; };
 		BB8C43EA1870BA93007FC069 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8C43E91870BA93007FC069 /* Foundation.framework */; };
@@ -39,7 +43,6 @@
 		BB8C44151870BA93007FC069 /* AsNeededTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8C44141870BA93007FC069 /* AsNeededTests.m */; };
 		BB8C44201870BAAE007FC069 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB8C441F1870BAAE007FC069 /* StoreKit.framework */; };
 		BB8C44221870BAFE007FC069 /* iPhoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB8C44211870BAFE007FC069 /* iPhoneStoryboard.storyboard */; };
-		BBADA03E187685F90017D83C /* iPadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBADA03D187685F90017D83C /* iPadStoryboard.storyboard */; };
 		BBADA0421876B5790017D83C /* Add.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA03F1876B5790017D83C /* Add.png */; };
 		BBADA0431876B5790017D83C /* pillx2.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA0401876B5790017D83C /* pillx2.png */; };
 		BBADA0441876B5790017D83C /* pill.png in Resources */ = {isa = PBXBuildFile; fileRef = BBADA0411876B5790017D83C /* pill.png */; };
@@ -60,15 +63,23 @@
 /* Begin PBXFileReference section */
 		BB12778E1876C7A60077E66A /* MyMedsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMedsCollectionViewCell.h; sourceTree = "<group>"; };
 		BB12778F1876C7A60077E66A /* MyMedsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMedsCollectionViewCell.m; sourceTree = "<group>"; };
+		BB12779118787EED0077E66A /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
+		BB1277DD1878AC970077E66A /* BasicReportsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BasicReportsViewController.h; sourceTree = "<group>"; };
+		BB1277DE1878AC970077E66A /* BasicReportsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BasicReportsViewController.m; sourceTree = "<group>"; };
+		BB1277E01879C6140077E66A /* AsNeeded1.1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = file; path = AsNeeded1.1.xcdatamodel; sourceTree = "<group>"; };
+		BB1277E11879D3F30077E66A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BB1277E31879DB4B0077E66A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BB1277E51879EF990077E66A /* PeriodicAdministrationSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodicAdministrationSchedule.h; sourceTree = "<group>"; };
+		BB1277E61879EF990077E66A /* PeriodicAdministrationSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodicAdministrationSchedule.m; sourceTree = "<group>"; };
+		BB1277E81879EF9A0077E66A /* PeriodicAdministrationOccurance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodicAdministrationOccurance.h; sourceTree = "<group>"; };
+		BB1277E91879EF9A0077E66A /* PeriodicAdministrationOccurance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodicAdministrationOccurance.m; sourceTree = "<group>"; };
+		BB1277EB1879EF9A0077E66A /* Medication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medication.h; sourceTree = "<group>"; };
+		BB1277EC1879EF9A0077E66A /* Medication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Medication.m; sourceTree = "<group>"; };
+		BB1277EE1879EF9A0077E66A /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		BB1277EF1879EF9A0077E66A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		BB1277F11879EF9A0077E66A /* MedicationAdministration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationAdministration.h; sourceTree = "<group>"; };
+		BB1277F21879EF9A0077E66A /* MedicationAdministration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationAdministration.m; sourceTree = "<group>"; };
 		BB3626F61872819600698D70 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
-		BB3626F818728AD400698D70 /* PeriodicAdministrationOccurance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodicAdministrationOccurance.h; sourceTree = "<group>"; };
-		BB3626F918728AD400698D70 /* PeriodicAdministrationOccurance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodicAdministrationOccurance.m; sourceTree = "<group>"; };
-		BB3626FB18728AD500698D70 /* MedicationAdministration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationAdministration.h; sourceTree = "<group>"; };
-		BB3626FC18728AD500698D70 /* MedicationAdministration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationAdministration.m; sourceTree = "<group>"; };
-		BB3626FE18728AD500698D70 /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		BB3626FF18728AD500698D70 /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
-		BB36270418728AD500698D70 /* PeriodicAdministrationSchedule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeriodicAdministrationSchedule.h; sourceTree = "<group>"; };
-		BB36270518728AD500698D70 /* PeriodicAdministrationSchedule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeriodicAdministrationSchedule.m; sourceTree = "<group>"; };
 		BB36270718728E9500698D70 /* EditMedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMedsViewController.h; sourceTree = "<group>"; };
 		BB36270818728E9500698D70 /* EditMedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMedsViewController.m; sourceTree = "<group>"; };
 		BB36270A18728ED400698D70 /* MyMedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMedsViewController.h; sourceTree = "<group>"; };
@@ -78,8 +89,6 @@
 		BB637BF018762A20008C3BC6 /* MyMedsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyMedsTableViewCell.h; sourceTree = "<group>"; };
 		BB637BF118762A20008C3BC6 /* MyMedsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyMedsTableViewCell.m; sourceTree = "<group>"; };
 		BB637BF318764175008C3BC6 /* pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pill.png; path = ../../../Desktop/pill.png; sourceTree = "<group>"; };
-		BB637BF5187655F3008C3BC6 /* Medication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Medication.h; sourceTree = "<group>"; };
-		BB637BF6187655F3008C3BC6 /* Medication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Medication.m; sourceTree = "<group>"; };
 		BB82A179187122660086AB03 /* AsNeededViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsNeededViewController.h; sourceTree = "<group>"; };
 		BB82A17A187122660086AB03 /* AsNeededViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsNeededViewController.m; sourceTree = "<group>"; };
 		BB82A17D18712E960086AB03 /* MyInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyInfoViewController.h; sourceTree = "<group>"; };
@@ -95,7 +104,7 @@
 		BB8C43F91870BA93007FC069 /* AsNeeded-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsNeeded-Prefix.pch"; sourceTree = "<group>"; };
 		BB8C43FA1870BA93007FC069 /* AsNeededAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsNeededAppDelegate.h; sourceTree = "<group>"; };
 		BB8C43FB1870BA93007FC069 /* AsNeededAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsNeededAppDelegate.m; sourceTree = "<group>"; };
-		BB8C43FE1870BA93007FC069 /* AsNeeded.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AsNeeded.xcdatamodel; sourceTree = "<group>"; };
+		BB8C43FE1870BA93007FC069 /* AsNeeded1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AsNeeded1.0.xcdatamodel; sourceTree = "<group>"; };
 		BB8C44001870BA93007FC069 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BB8C44061870BA93007FC069 /* AsNeededTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsNeededTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB8C44071870BA93007FC069 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -105,7 +114,6 @@
 		BB8C441E1870BA9E007FC069 /* AsNeeded.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AsNeeded.entitlements; sourceTree = "<group>"; };
 		BB8C441F1870BAAE007FC069 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		BB8C44211870BAFE007FC069 /* iPhoneStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPhoneStoryboard.storyboard; sourceTree = "<group>"; };
-		BBADA03D187685F90017D83C /* iPadStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iPadStoryboard.storyboard; sourceTree = "<group>"; };
 		BBADA03F1876B5790017D83C /* Add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Add.png; path = ../../../Add.png; sourceTree = "<group>"; };
 		BBADA0401876B5790017D83C /* pillx2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pillx2.png; path = ../../../pillx2.png; sourceTree = "<group>"; };
 		BBADA0411876B5790017D83C /* pill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pill.png; path = ../../../pill.png; sourceTree = "<group>"; };
@@ -119,10 +127,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1277E41879DB4B0077E66A /* CoreLocation.framework in Frameworks */,
 				BB3626F71872819600698D70 /* iAd.framework in Frameworks */,
 				BB8C43EC1870BA93007FC069 /* CoreGraphics.framework in Frameworks */,
 				BB8C43F01870BA93007FC069 /* CoreData.framework in Frameworks */,
 				BB8C44201870BAAE007FC069 /* StoreKit.framework in Frameworks */,
+				BB1277E21879D3F30077E66A /* MapKit.framework in Frameworks */,
 				BB8C43EE1870BA93007FC069 /* UIKit.framework in Frameworks */,
 				BB8C43EA1870BA93007FC069 /* Foundation.framework in Frameworks */,
 			);
@@ -142,19 +152,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BB1277F4187A00C80077E66A /* Reporting */ = {
+			isa = PBXGroup;
+			children = (
+				BB1277DD1878AC970077E66A /* BasicReportsViewController.h */,
+				BB1277DE1878AC970077E66A /* BasicReportsViewController.m */,
+			);
+			name = Reporting;
+			sourceTree = "<group>";
+		};
+		BB1277F5187A00E90077E66A /* Med Management */ = {
+			isa = PBXGroup;
+			children = (
+				BB36270718728E9500698D70 /* EditMedsViewController.h */,
+				BB36270818728E9500698D70 /* EditMedsViewController.m */,
+				BB36270A18728ED400698D70 /* MyMedsViewController.h */,
+				BB36270B18728ED400698D70 /* MyMedsViewController.m */,
+				BB637BF018762A20008C3BC6 /* MyMedsTableViewCell.h */,
+				BB637BF118762A20008C3BC6 /* MyMedsTableViewCell.m */,
+				BBADA0471876B7530017D83C /* AddMedicationViewCell.h */,
+				BBADA0481876B7530017D83C /* AddMedicationViewCell.m */,
+			);
+			name = "Med Management";
+			sourceTree = "<group>";
+		};
+		BB1277F6187A010B0077E66A /* User Info */ = {
+			isa = PBXGroup;
+			children = (
+				BB82A17D18712E960086AB03 /* MyInfoViewController.h */,
+				BB82A17E18712E960086AB03 /* MyInfoViewController.m */,
+			);
+			name = "User Info";
+			sourceTree = "<group>";
+		};
 		BB82A17C18712D870086AB03 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				BB36270418728AD500698D70 /* PeriodicAdministrationSchedule.h */,
-				BB36270518728AD500698D70 /* PeriodicAdministrationSchedule.m */,
-				BB3626FE18728AD500698D70 /* User.h */,
-				BB3626FF18728AD500698D70 /* User.m */,
-				BB3626FB18728AD500698D70 /* MedicationAdministration.h */,
-				BB3626FC18728AD500698D70 /* MedicationAdministration.m */,
-				BB3626F818728AD400698D70 /* PeriodicAdministrationOccurance.h */,
-				BB3626F918728AD400698D70 /* PeriodicAdministrationOccurance.m */,
-				BB637BF5187655F3008C3BC6 /* Medication.h */,
-				BB637BF6187655F3008C3BC6 /* Medication.m */,
+				BB1277E51879EF990077E66A /* PeriodicAdministrationSchedule.h */,
+				BB1277E61879EF990077E66A /* PeriodicAdministrationSchedule.m */,
+				BB1277E81879EF9A0077E66A /* PeriodicAdministrationOccurance.h */,
+				BB1277E91879EF9A0077E66A /* PeriodicAdministrationOccurance.m */,
+				BB1277EB1879EF9A0077E66A /* Medication.h */,
+				BB1277EC1879EF9A0077E66A /* Medication.m */,
+				BB1277EE1879EF9A0077E66A /* User.h */,
+				BB1277EF1879EF9A0077E66A /* User.m */,
+				BB1277F11879EF9A0077E66A /* MedicationAdministration.h */,
+				BB1277F21879EF9A0077E66A /* MedicationAdministration.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -183,6 +226,8 @@
 		BB8C43E81870BA93007FC069 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB1277E31879DB4B0077E66A /* CoreLocation.framework */,
+				BB1277E11879D3F30077E66A /* MapKit.framework */,
 				BB3626F61872819600698D70 /* iAd.framework */,
 				BB8C441F1870BAAE007FC069 /* StoreKit.framework */,
 				BB8C43E91870BA93007FC069 /* Foundation.framework */,
@@ -197,6 +242,9 @@
 		BB8C43F11870BA93007FC069 /* AsNeeded */ = {
 			isa = PBXGroup;
 			children = (
+				BB1277F6187A010B0077E66A /* User Info */,
+				BB1277F5187A00E90077E66A /* Med Management */,
+				BB1277F4187A00C80077E66A /* Reporting */,
 				BB8C441E1870BA9E007FC069 /* AsNeeded.entitlements */,
 				BB8C43FA1870BA93007FC069 /* AsNeededAppDelegate.h */,
 				BB8C43FB1870BA93007FC069 /* AsNeededAppDelegate.m */,
@@ -208,19 +256,9 @@
 				BB82A17C18712D870086AB03 /* Model */,
 				BB82A179187122660086AB03 /* AsNeededViewController.h */,
 				BB82A17A187122660086AB03 /* AsNeededViewController.m */,
-				BB82A17D18712E960086AB03 /* MyInfoViewController.h */,
-				BB82A17E18712E960086AB03 /* MyInfoViewController.m */,
-				BB36270718728E9500698D70 /* EditMedsViewController.h */,
-				BB36270818728E9500698D70 /* EditMedsViewController.m */,
-				BB36270A18728ED400698D70 /* MyMedsViewController.h */,
-				BB36270B18728ED400698D70 /* MyMedsViewController.m */,
-				BB637BF018762A20008C3BC6 /* MyMedsTableViewCell.h */,
-				BB637BF118762A20008C3BC6 /* MyMedsTableViewCell.m */,
-				BBADA03D187685F90017D83C /* iPadStoryboard.storyboard */,
-				BBADA0471876B7530017D83C /* AddMedicationViewCell.h */,
-				BBADA0481876B7530017D83C /* AddMedicationViewCell.m */,
 				BB12778E1876C7A60077E66A /* MyMedsCollectionViewCell.h */,
 				BB12778F1876C7A60077E66A /* MyMedsCollectionViewCell.m */,
+				BB12779118787EED0077E66A /* iPadStoryboard.storyboard */,
 			);
 			path = AsNeeded;
 			sourceTree = "<group>";
@@ -315,6 +353,9 @@
 							com.apple.iCloud = {
 								enabled = 1;
 							};
+							com.apple.iOS = {
+								enabled = 1;
+							};
 						};
 					};
 					BB8C44051870BA93007FC069 = {
@@ -352,8 +393,8 @@
 				BB8C43F61870BA93007FC069 /* InfoPlist.strings in Resources */,
 				BB8C44011870BA93007FC069 /* Images.xcassets in Resources */,
 				BBADA0441876B5790017D83C /* pill.png in Resources */,
-				BBADA03E187685F90017D83C /* iPadStoryboard.storyboard in Resources */,
 				BBADA0431876B5790017D83C /* pillx2.png in Resources */,
+				BB12779218787EED0077E66A /* iPadStoryboard.storyboard in Resources */,
 				BB8C44221870BAFE007FC069 /* iPhoneStoryboard.storyboard in Resources */,
 				BBADA0461876B5A70017D83C /* Addx2.png in Resources */,
 			);
@@ -374,19 +415,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB36270618728AD500698D70 /* PeriodicAdministrationSchedule.m in Sources */,
+				BB1277F01879EF9A0077E66A /* User.m in Sources */,
 				BB36270918728E9500698D70 /* EditMedsViewController.m in Sources */,
-				BB36270018728AD500698D70 /* User.m in Sources */,
-				BB637BF7187655F3008C3BC6 /* Medication.m in Sources */,
 				BB82A17F18712E960086AB03 /* MyInfoViewController.m in Sources */,
 				BB8C43FF1870BA93007FC069 /* AsNeeded.xcdatamodeld in Sources */,
+				BB1277ED1879EF9A0077E66A /* Medication.m in Sources */,
 				BB1277901876C7A60077E66A /* MyMedsCollectionViewCell.m in Sources */,
-				BB3626FA18728AD400698D70 /* PeriodicAdministrationOccurance.m in Sources */,
+				BB1277DF1878AC970077E66A /* BasicReportsViewController.m in Sources */,
 				BB637BF218762A20008C3BC6 /* MyMedsTableViewCell.m in Sources */,
+				BB1277F31879EF9A0077E66A /* MedicationAdministration.m in Sources */,
 				BB36270C18728ED400698D70 /* MyMedsViewController.m in Sources */,
+				BB1277E71879EF990077E66A /* PeriodicAdministrationSchedule.m in Sources */,
 				BB8C43FC1870BA93007FC069 /* AsNeededAppDelegate.m in Sources */,
 				BB8C43F81870BA93007FC069 /* main.m in Sources */,
-				BB3626FD18728AD500698D70 /* MedicationAdministration.m in Sources */,
+				BB1277EA1879EF9A0077E66A /* PeriodicAdministrationOccurance.m in Sources */,
 				BB82A17B187122660086AB03 /* AsNeededViewController.m in Sources */,
 				BBADA0491876B7530017D83C /* AddMedicationViewCell.m in Sources */,
 			);
@@ -616,9 +658,10 @@
 		BB8C43FD1870BA93007FC069 /* AsNeeded.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BB8C43FE1870BA93007FC069 /* AsNeeded.xcdatamodel */,
+				BB1277E01879C6140077E66A /* AsNeeded1.1.xcdatamodel */,
+				BB8C43FE1870BA93007FC069 /* AsNeeded1.0.xcdatamodel */,
 			);
-			currentVersion = BB8C43FE1870BA93007FC069 /* AsNeeded.xcdatamodel */;
+			currentVersion = BB1277E01879C6140077E66A /* AsNeeded1.1.xcdatamodel */;
 			path = AsNeeded.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

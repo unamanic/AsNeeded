@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="1.1" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3401" systemVersion="13C32" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Medication" representedClassName="Medication" syncable="YES">
+        <attribute name="canSpit" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="dosageQuantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageSize" optional="YES" attributeType="Float" defaultValueString="0" syncable="YES"/>
+        <attribute name="dosageType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dosageUnit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intraadministrationCooldown" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="minimumTimeBetweenDoses" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="medicationAdministrations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MedicationAdministration" inverseName="medication" inverseEntity="MedicationAdministration" syncable="YES"/>
+        <relationship name="periodicAdministrationSchedule" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeriodicAdministrationSchedule" inverseName="medication" inverseEntity="PeriodicAdministrationSchedule" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="medications" inverseEntity="User" syncable="YES"/>
+    </entity>
+    <entity name="MedicationAdministration" representedClassName="MedicationAdministration" syncable="YES">
+        <attribute name="lat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="lon" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="quantity" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="medicationAdministrations" inverseEntity="Medication" syncable="YES"/>
+    </entity>
+    <entity name="PeriodicAdministrationOccurance" representedClassName="PeriodicAdministrationOccurance" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeFromStart" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="periodicAdministrationSchedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PeriodicAdministrationSchedule" inverseName="periodicAdministrationOcurrances" inverseEntity="PeriodicAdministrationSchedule" syncable="YES"/>
+    </entity>
+    <entity name="PeriodicAdministrationSchedule" representedClassName="PeriodicAdministrationSchedule" syncable="YES">
+        <attribute name="frequency" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reminder" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <relationship name="medication" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medication" inverseName="periodicAdministrationSchedule" inverseEntity="Medication" syncable="YES"/>
+        <relationship name="periodicAdministrationOcurrances" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PeriodicAdministrationOccurance" inverseName="periodicAdministrationSchedule" inverseEntity="PeriodicAdministrationOccurance" syncable="YES"/>
+    </entity>
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="address" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="birthDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="phoneNumber" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="state" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="zip" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="medications" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Medication" inverseName="user" inverseEntity="Medication" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Medication" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="MedicationAdministration" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PeriodicAdministrationOccurance" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="PeriodicAdministrationSchedule" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="User" positionX="0" positionY="0" width="0" height="0"/>
+    </elements>
+</model>
