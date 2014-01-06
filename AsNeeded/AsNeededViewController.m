@@ -16,8 +16,8 @@
 
 
 @interface AsNeededViewController () {
+    AsNeededAppDelegate *appDelegate;
     NSMutableArray *medArray;
-    
     NSTimer *timer;
 }
 
@@ -48,28 +48,34 @@
 //    }
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refreshCollection)
+                                             selector:@selector(loadData)
                                                  name:@"SomethingChanged"
                                                object:[[UIApplication sharedApplication] delegate]];
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
-    AsNeededAppDelegate *appDelegate = [UIApplication sharedApplication].delegate;
+    appDelegate = [UIApplication sharedApplication].delegate;
     user = [appDelegate fetchUser];
-    
-    //[self.collectionView registerClass:[MyMedsCollectionViewCell class] forCellWithReuseIdentifier:@"MedCell"];
 
     
     timer = [NSTimer scheduledTimerWithTimeInterval:5
                                              target:self selector:@selector(refreshCollection)
                                            userInfo:nil repeats:YES];
     
+    [self loadData];
+}
+                                                                            
+- (void)loadData
+{
+    user = [appDelegate fetchUser];
     if (user) {
         myMedsButton.enabled = YES;
+        reportsButton.enabled = YES;
         medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
     }
     [self refreshCollection];
+
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -97,8 +103,10 @@
 
 - (void)refreshCollection
 {
+        user = [appDelegate fetchUser];
     if (user) {
         myMedsButton.enabled = YES;
+        reportsButton.enabled = YES;
         medArray = [NSMutableArray arrayWithArray:[user.medications allObjects]];
     }
     

@@ -17,6 +17,9 @@
 		BB1277ED1879EF9A0077E66A /* Medication.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277EC1879EF9A0077E66A /* Medication.m */; };
 		BB1277F01879EF9A0077E66A /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277EF1879EF9A0077E66A /* User.m */; };
 		BB1277F31879EF9A0077E66A /* MedicationAdministration.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277F21879EF9A0077E66A /* MedicationAdministration.m */; };
+		BB1277F9187A05E80077E66A /* MapItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277F8187A05E80077E66A /* MapItViewController.m */; };
+		BB1277FC187A1CC70077E66A /* ChartItViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277FB187A1CC70077E66A /* ChartItViewController.m */; };
+		BB1277FF187A7F060077E66A /* AggregateCell.m in Sources */ = {isa = PBXBuildFile; fileRef = BB1277FE187A7F060077E66A /* AggregateCell.m */; };
 		BB3626F71872819600698D70 /* iAd.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB3626F61872819600698D70 /* iAd.framework */; };
 		BB36270918728E9500698D70 /* EditMedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36270818728E9500698D70 /* EditMedsViewController.m */; };
 		BB36270C18728ED400698D70 /* MyMedsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BB36270B18728ED400698D70 /* MyMedsViewController.m */; };
@@ -79,6 +82,12 @@
 		BB1277EF1879EF9A0077E66A /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		BB1277F11879EF9A0077E66A /* MedicationAdministration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedicationAdministration.h; sourceTree = "<group>"; };
 		BB1277F21879EF9A0077E66A /* MedicationAdministration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MedicationAdministration.m; sourceTree = "<group>"; };
+		BB1277F7187A05E80077E66A /* MapItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapItViewController.h; sourceTree = "<group>"; };
+		BB1277F8187A05E80077E66A /* MapItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapItViewController.m; sourceTree = "<group>"; };
+		BB1277FA187A1CC70077E66A /* ChartItViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChartItViewController.h; sourceTree = "<group>"; };
+		BB1277FB187A1CC70077E66A /* ChartItViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChartItViewController.m; sourceTree = "<group>"; };
+		BB1277FD187A7F060077E66A /* AggregateCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AggregateCell.h; sourceTree = "<group>"; };
+		BB1277FE187A7F060077E66A /* AggregateCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AggregateCell.m; sourceTree = "<group>"; };
 		BB3626F61872819600698D70 /* iAd.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = iAd.framework; path = System/Library/Frameworks/iAd.framework; sourceTree = SDKROOT; };
 		BB36270718728E9500698D70 /* EditMedsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditMedsViewController.h; sourceTree = "<group>"; };
 		BB36270818728E9500698D70 /* EditMedsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditMedsViewController.m; sourceTree = "<group>"; };
@@ -157,6 +166,12 @@
 			children = (
 				BB1277DD1878AC970077E66A /* BasicReportsViewController.h */,
 				BB1277DE1878AC970077E66A /* BasicReportsViewController.m */,
+				BB1277F7187A05E80077E66A /* MapItViewController.h */,
+				BB1277F8187A05E80077E66A /* MapItViewController.m */,
+				BB1277FA187A1CC70077E66A /* ChartItViewController.h */,
+				BB1277FB187A1CC70077E66A /* ChartItViewController.m */,
+				BB1277FD187A7F060077E66A /* AggregateCell.h */,
+				BB1277FE187A7F060077E66A /* AggregateCell.m */,
 			);
 			name = Reporting;
 			sourceTree = "<group>";
@@ -242,18 +257,18 @@
 		BB8C43F11870BA93007FC069 /* AsNeeded */ = {
 			isa = PBXGroup;
 			children = (
+				BB82A17C18712D870086AB03 /* Model */,
 				BB1277F6187A010B0077E66A /* User Info */,
 				BB1277F5187A00E90077E66A /* Med Management */,
 				BB1277F4187A00C80077E66A /* Reporting */,
+				BB8C43F21870BA93007FC069 /* Supporting Files */,
 				BB8C441E1870BA9E007FC069 /* AsNeeded.entitlements */,
 				BB8C43FA1870BA93007FC069 /* AsNeededAppDelegate.h */,
 				BB8C43FB1870BA93007FC069 /* AsNeededAppDelegate.m */,
 				BB8C44001870BA93007FC069 /* Images.xcassets */,
 				BB8C43FD1870BA93007FC069 /* AsNeeded.xcdatamodeld */,
-				BB8C43F21870BA93007FC069 /* Supporting Files */,
 				BB8C44211870BAFE007FC069 /* iPhoneStoryboard.storyboard */,
 				BB637BF318764175008C3BC6 /* pill.png */,
-				BB82A17C18712D870086AB03 /* Model */,
 				BB82A179187122660086AB03 /* AsNeededViewController.h */,
 				BB82A17A187122660086AB03 /* AsNeededViewController.m */,
 				BB12778E1876C7A60077E66A /* MyMedsCollectionViewCell.h */,
@@ -415,6 +430,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB1277F9187A05E80077E66A /* MapItViewController.m in Sources */,
 				BB1277F01879EF9A0077E66A /* User.m in Sources */,
 				BB36270918728E9500698D70 /* EditMedsViewController.m in Sources */,
 				BB82A17F18712E960086AB03 /* MyInfoViewController.m in Sources */,
@@ -422,6 +438,7 @@
 				BB1277ED1879EF9A0077E66A /* Medication.m in Sources */,
 				BB1277901876C7A60077E66A /* MyMedsCollectionViewCell.m in Sources */,
 				BB1277DF1878AC970077E66A /* BasicReportsViewController.m in Sources */,
+				BB1277FC187A1CC70077E66A /* ChartItViewController.m in Sources */,
 				BB637BF218762A20008C3BC6 /* MyMedsTableViewCell.m in Sources */,
 				BB1277F31879EF9A0077E66A /* MedicationAdministration.m in Sources */,
 				BB36270C18728ED400698D70 /* MyMedsViewController.m in Sources */,
@@ -431,6 +448,7 @@
 				BB1277EA1879EF9A0077E66A /* PeriodicAdministrationOccurance.m in Sources */,
 				BB82A17B187122660086AB03 /* AsNeededViewController.m in Sources */,
 				BBADA0491876B7530017D83C /* AddMedicationViewCell.m in Sources */,
+				BB1277FF187A7F060077E66A /* AggregateCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

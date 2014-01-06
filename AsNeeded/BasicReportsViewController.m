@@ -12,6 +12,9 @@
 #import "Medication.h"
 #import "MedicationAdministration.h"
 
+#import "MapItViewController.h"
+#import "ChartItViewController.h"
+
 @interface BasicReportsViewController () {
     AsNeededAppDelegate *appDelegate;
     
@@ -144,7 +147,7 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a story board-based application, you will often want to do a little preparation before navigation
@@ -152,8 +155,19 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    UIView *cell = (UIView *)sender;
+    Medication *med = [medications objectAtIndex:indexPath.section];
+    
+    // It's a MapIt Cell
+    if (cell.tag == 98) {
+        MapItViewController *desinationVC = [segue destinationViewController];
+        desinationVC.med = med;
+    } else if (cell.tag == 97) {
+        ChartItViewController *desinationVC = [segue destinationViewController];
+        desinationVC.med = med;
+    }
 }
 
- */
 
 @end
